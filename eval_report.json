@@ -1,0 +1,254 @@
+[
+  {
+    "case": "S1-modify-with-recovery",
+    "passed": true,
+    "checks": [
+      {
+        "check": "decision",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "info_gathered",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "constraints",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "action",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "validated",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "recovery",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "escalation",
+        "ok": true,
+        "detail": ""
+      }
+    ],
+    "final": {
+      "decision": "modify",
+      "final_qty": 200,
+      "po_id": "PO-2002",
+      "explanation": "Real need is 300 (target 1000, position 700); system recommended 800. Order cut to 200 because the storage check failed for 300."
+    }
+  },
+  {
+    "case": "S1-accept",
+    "passed": true,
+    "checks": [
+      {
+        "check": "decision",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "info_gathered",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "constraints",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "action",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "validated",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "escalation",
+        "ok": true,
+        "detail": ""
+      }
+    ],
+    "final": {
+      "decision": "accept",
+      "final_qty": 500,
+      "po_id": "PO-2001",
+      "explanation": "Real need is 500 (target 575, position 100); system recommended 500."
+    }
+  },
+  {
+    "case": "S1-modify-too-high",
+    "passed": true,
+    "checks": [
+      {
+        "check": "decision",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "info_gathered",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "constraints",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "action",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "validated",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "escalation",
+        "ok": true,
+        "detail": ""
+      }
+    ],
+    "final": {
+      "decision": "modify",
+      "final_qty": 500,
+      "po_id": "PO-2001",
+      "explanation": "Real need is 500 (target 575, position 100); system recommended 800."
+    }
+  },
+  {
+    "case": "S1-reject-no-need",
+    "passed": true,
+    "checks": [
+      {
+        "check": "decision",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "info_gathered",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "constraints",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "action",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "validated",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "escalation",
+        "ok": true,
+        "detail": ""
+      }
+    ],
+    "final": {
+      "decision": "reject",
+      "final_qty": 0,
+      "po_id": null,
+      "explanation": "No purchase needed: inventory position 1200 already covers the target 405."
+    }
+  },
+  {
+    "case": "S1-investigate-missing-data",
+    "passed": true,
+    "checks": [
+      {
+        "check": "decision",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "info_gathered",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "constraints",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "action",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "validated",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "escalation",
+        "ok": true,
+        "detail": ""
+      }
+    ],
+    "final": {
+      "decision": "investigate",
+      "final_qty": 0,
+      "po_id": null,
+      "explanation": "No forecast data for this SKU. Escalated to the buyer instead of guessing."
+    }
+  },
+  {
+    "case": "GUARDRAIL-reckless-agent",
+    "passed": true,
+    "checks": [
+      {
+        "check": "info_gathered",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "constraints",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "action",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "validated",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "guardrail_blocked",
+        "ok": true,
+        "detail": ""
+      }
+    ],
+    "final": {
+      "decision": "accept",
+      "final_qty": 800,
+      "po_id": null,
+      "explanation": "trust the system"
+    }
+  }
+]

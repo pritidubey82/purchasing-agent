@@ -9,6 +9,7 @@ Design rules:
     cancel_po / submit_po / escalate_to_buyer. submit_po re-runs validation
     itself, so a wrong LLM decision cannot bypass the rules.
 """
+import copy
 import math
 
 from .store import Store
@@ -51,7 +52,8 @@ class PurchasingTools:
                 result = fn(**kwargs)
             except TypeError as e:
                 result = _err("bad_arguments", detail=str(e))
-        self.trace.append({"tool": name, "args": kwargs, "result": result})
+        # snapshot: later changes to a PO must not rewrite history
+        self.trace.append({"name": name, "args": copy.deepcopy(kwargs), "result": copy.deepcopy(result)})
         return result
 
     # --------------------------------------------------------------- helpers
