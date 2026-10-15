@@ -1,0 +1,36 @@
+{
+  "as_of": "2026-10-14",
+  "policy": {"auto_approve_limit": 3000, "review_period_days": 7, "max_retries": 3},
+  "system_recommendations": {"SKU-1042": 800, "SKU-2001": 500, "SKU-3003": 300, "SKU-4004": 600},
+  "skus": {
+    "SKU-1042": {"name": "Bottled Water 1L", "node": "N-07", "category": "water", "on_hand": 300, "safety_stock": 120, "storage_capacity": 900},
+    "SKU-2001": {"name": "Cola 2L", "node": "N-07", "category": "soft_drinks", "on_hand": 100, "safety_stock": 75, "storage_capacity": 1000},
+    "SKU-3003": {"name": "Potato Chips 150g", "node": "N-07", "category": "snacks", "on_hand": 60, "safety_stock": 40, "storage_capacity": 500},
+    "SKU-4004": {"name": "Rice 5kg", "node": "N-07", "category": "staples", "on_hand": 900, "safety_stock": 45, "storage_capacity": 2000}
+  },
+  "forecast": {
+    "SKU-1042": {"daily_demand": 80, "recent_7d_avg_sales": 82},
+    "SKU-2001": {"daily_demand": 50, "recent_7d_avg_sales": 51},
+    "SKU-4004": {"daily_demand": 30, "recent_7d_avg_sales": 29}
+  },
+  "suppliers": {
+    "SKU-1042": [
+      {"supplier_id": "SUP-01", "name": "AquaPure", "unit_cost": 12.0, "lead_time_days": 4, "moq": 200, "pack_size": 50, "max_available": 1000, "reliability": 0.95},
+      {"supplier_id": "SUP-02", "name": "HydroCo", "unit_cost": 13.5, "lead_time_days": 6, "moq": 100, "pack_size": 50, "max_available": 300, "reliability": 0.88}
+    ],
+    "SKU-2001": [
+      {"supplier_id": "SUP-03", "name": "FizzCorp", "unit_cost": 4.0, "lead_time_days": 3, "moq": 100, "pack_size": 50, "max_available": 2000, "reliability": 0.97}
+    ],
+    "SKU-3003": [
+      {"supplier_id": "SUP-04", "name": "CrunchFoods", "unit_cost": 8.0, "lead_time_days": 5, "moq": 100, "pack_size": 20, "max_available": 800, "reliability": 0.9}
+    ],
+    "SKU-4004": [
+      {"supplier_id": "SUP-05", "name": "GrainHouse", "unit_cost": 25.0, "lead_time_days": 5, "moq": 100, "pack_size": 10, "max_available": 1000, "reliability": 0.93}
+    ]
+  },
+  "budgets": {"water": 5000, "soft_drinks": 6000, "snacks": 3000, "staples": 4000},
+  "open_pos": [
+    {"po_id": "PO-1001", "sku": "SKU-1042", "supplier_id": "SUP-01", "qty": 400, "unit_cost": 12.0, "value": 4800.0, "eta_days": 3, "status": "submitted", "approved_by": "auto"},
+    {"po_id": "PO-1002", "sku": "SKU-4004", "supplier_id": "SUP-05", "qty": 300, "unit_cost": 25.0, "value": 7500.0, "eta_days": 2, "status": "submitted", "approved_by": "buyer"}
+  ]
+}
